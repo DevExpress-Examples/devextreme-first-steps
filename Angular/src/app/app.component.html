@@ -2,6 +2,7 @@
   <dx-progress-bar id="progress" [value]="progressValue"></dx-progress-bar>
   <dx-data-grid
     id="task-grid"
+    keyExpr="id"
     [dataSource]="tasks"
     (onRowUpdated)="updateProgress()"
     (onRowInserted)="updateProgress()"
