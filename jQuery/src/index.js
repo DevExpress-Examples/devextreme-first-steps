@@ -8,21 +8,22 @@ $(() => {
     },
     {
       id: 2,
-      task: 'Write a blog post', 
-      dueDate: new Date(), 
+      task: 'Write a blog post',
+      dueDate: new Date(),
       done: true,
     },
   ];
 
   $('#task-grid').dxDataGrid({
     dataSource: tasks,
+    keyExpr: 'id',
     columns: ['task', 'dueDate', 'done'],
     editing: {
       mode: 'cell',
       allowUpdating: true,
       allowAdding: true,
       allowDeleting: true,
-      newRowPosition: 'last'
+      newRowPosition: 'last',
     },
     onRowUpdated: updateProgress,
     onRowInserted: updateProgress,
