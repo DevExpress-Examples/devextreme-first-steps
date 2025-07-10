@@ -32,6 +32,7 @@ function App(): JSX.Element {
       <ProgressBar id='progress' value={progressValue} />
       <DataGrid
         id='task-grid'
+        keyExpr='id'
         dataSource={tasks}
         onRowUpdated={updateProgress}
         onRowInserted={updateProgress}
@@ -41,7 +42,7 @@ function App(): JSX.Element {
         <Column dataField='dueDate' />
         <Column dataField='done' />{' '}
         <Editing
-          mode='row'
+          mode='cell'
           allowUpdating={true}
           allowAdding={true}
           allowDeleting={true}
