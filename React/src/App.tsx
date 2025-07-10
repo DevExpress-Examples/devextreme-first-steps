@@ -22,10 +22,10 @@ const tasks = [
 function App(): JSX.Element {
   const [progressValue, setProgressValue] = useState(50);
   const updateProgress = useCallback(() => {
-  const all = tasks.length;
-  const completed = tasks.filter((t) => t.done).length;
-  setProgressValue(Math.round((completed / all) * 100));
-}, [tasks]);
+    const all = tasks.length;
+    const completed = tasks.filter((t) => t.done).length;
+    setProgressValue(Math.round((completed / all) * 100));
+  }, [tasks]);
 
   return (
     <div id='dashboard'>
