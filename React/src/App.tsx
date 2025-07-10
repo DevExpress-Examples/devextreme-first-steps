@@ -21,7 +21,7 @@ const tasks = [
 
 function App(): JSX.Element {
   const [progressValue, setProgressValue] = useState(50);
-  function updateProgress(): void {
+  const updateProgress = () => {
     const all = tasks.length;
     const completed = tasks.filter((t) => t.done).length;
     setProgressValue(Math.round((completed / all) * 100));
