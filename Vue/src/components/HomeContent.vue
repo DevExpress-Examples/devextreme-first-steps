@@ -3,6 +3,7 @@
     <DxProgressBar id='progress' :value='progressValue' />
     <DxDataGrid
       id='task-grid'
+      key-expr='id'
       :data-source='tasks'
       @row-updated='updateProgress'
       @row-inserted='updateProgress'
@@ -12,7 +13,7 @@
       <DxColumn data-field='dueDate' />
       <DxColumn data-field='done' />
       <DxEditing
-        mode='row'
+        mode='cell'
         :allow-updating='true'
         :allow-adding='true'
         :allow-deleting='true'
