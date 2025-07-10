@@ -11,23 +11,23 @@ import { DxProgressBarComponent } from 'devextreme-angular/ui/progress-bar';
 })
 export class AppComponent {
   tasks = [
-    { 
-      id: 1, 
-      task: 'Buy groceries', 
-      dueDate: new Date(), 
+    {
+      id: 1,
+      task: 'Buy groceries',
+      dueDate: new Date(),
       done: false,
     },
-    { 
-      id: 2, 
-      task: 'Write a blog post', 
-      dueDate: new Date(), 
+    {
+      id: 2,
+      task: 'Write a blog post',
+      dueDate: new Date(),
       done: true,
-    }
+    },
   ];
 
   progressValue = 50;
 
-  updateProgress() {
+  updateProgress(): void {
     const all = this.tasks.length;
     const completed = this.tasks.filter((t) => t.done).length;
     this.progressValue = Math.round((completed / all) * 100);
