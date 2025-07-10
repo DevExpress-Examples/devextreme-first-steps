@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import DataGrid, { Column, Editing } from 'devextreme-react/data-grid';
 import ProgressBar from 'devextreme-react/progress-bar';
 import './App.css';
@@ -21,11 +21,12 @@ const tasks = [
 
 function App(): JSX.Element {
   const [progressValue, setProgressValue] = useState(50);
-  const updateProgress = () => {
-    const all = tasks.length;
-    const completed = tasks.filter((t) => t.done).length;
-    setProgressValue(Math.round((completed / all) * 100));
-  }
+  const updateProgress = useCallback(() => {
+  const all = tasks.length;
+  const completed = tasks.filter((t) => t.done).length;
+  setProgressValue(Math.round((completed / all) * 100));
+}, [tasks]);
+
   return (
     <div id='dashboard'>
       <ProgressBar id='progress' value={progressValue} />
