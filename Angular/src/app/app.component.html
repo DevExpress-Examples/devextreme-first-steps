@@ -1,11 +1,11 @@
 <div id="dashboard">
   <dx-progress-bar id="progress" [value]="progressValue"></dx-progress-bar>
-  <dx-data-grid id="task-grid" [dataSource]="tasks" (onRowUpdated)="updateProgress($event)"
-    (onRowInserted)="updateProgress($event)" (onRowRemoved)="updateProgress($event)">
+  <dx-data-grid id="task-grid" [dataSource]="tasks" (onRowUpdated)="updateProgress()"
+    (onRowInserted)="updateProgress()" (onRowRemoved)="updateProgress()">
     <dxi-data-grid-column dataField="task"></dxi-data-grid-column>
     <dxi-data-grid-column dataField="dueDate"></dxi-data-grid-column>
     <dxi-data-grid-column dataField="done"></dxi-data-grid-column>
-    <dxo-data-grid-editing mode="row" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true"
+    <dxo-data-grid-editing mode="cell" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true"
       newRowPosition="last"></dxo-data-grid-editing>
   </dx-data-grid>
 </div>

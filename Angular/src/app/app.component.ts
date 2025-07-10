@@ -7,7 +7,7 @@ import { DxProgressBarComponent } from 'devextreme-angular/ui/progress-bar';
   standalone: true,
   imports: [DxDataGridComponent, DxProgressBarComponent, DxiDataGridColumnComponent, DxoDataGridEditingComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   tasks = [
