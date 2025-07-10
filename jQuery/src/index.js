@@ -1,31 +1,41 @@
 $(() => {
   const tasks = [
-    { id: 1, task: "Buy groceries", dueDate: new Date(), done: false },
-    { id: 2, task: "Write a blog post", dueDate: new Date(), done: true }
+    {
+      id: 1,
+      task: 'Buy groceries',
+      dueDate: new Date(),
+      done: false,
+    },
+    {
+      id: 2,
+      task: 'Write a blog post', 
+      dueDate: new Date(), 
+      done: true,
+    },
   ];
-  
-  $("#task-grid").dxDataGrid({
+
+  $('#task-grid').dxDataGrid({
     dataSource: tasks,
-    columns: ["task", "dueDate", "done"],
+    columns: ['task', 'dueDate', 'done'],
     editing: {
-      mode: "cell",
+      mode: 'cell',
       allowUpdating: true,
       allowAdding: true,
       allowDeleting: true,
-      newRowPosition: "last"
+      newRowPosition: 'last'
     },
     onRowUpdated: updateProgress,
     onRowInserted: updateProgress,
-    onRowRemoved: updateProgress
+    onRowRemoved: updateProgress,
   });
 
-  const progress = $("#progress").dxProgressBar({
+  const progress = $('#progress').dxProgressBar({
     value: 50,
-  }).dxProgressBar("instance");
+  }).dxProgressBar('instance');
 
   function updateProgress() {
     const all = tasks.length;
     const completed = tasks.filter((t) => t.done).length;
-    progress.option("value", Math.round((completed / all) * 100));
+    progress.option('value', Math.round((completed / all) * 100));
   }
 });
