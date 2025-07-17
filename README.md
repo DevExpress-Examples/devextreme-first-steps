@@ -4,17 +4,13 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# DevExtreme Examples Template
+# First Steps with DevExtreme
 
-This is the repository template for creating new examples. 
+This repository stores code for the following DevExtreme step-by-step tutorial: [First Steps](https://js.devexpress.com/Documentation/Guide/Common/First_Steps/). 
 
-Use **_Product_ for DevExtreme - _Task_** template for a title. 
+The application includes two DevExtreme components: [DataGrid](https://js.devexpress.com/Documentation/Guide/UI_Components/DataGrid/Overview/) and [ProgressBar](https://js.devexpress.com/Documentation/Guide/UI_Components/ProgressBar/Overview/). The DataGrid displays tasks, and you can mark them as complete or incomplete. The ProgressBar above the DataGrid indicates task completion progress.
 
-Describe the solved task in this section.
-
-Put a screenshot/gif that illustrates the result here.
-
-Then, add implementation details (steps, code snippets, and other technical information in a free form), or add a link to an existing document with implementation details. 
+<div align="center"><img src="./first-steps.png" /></div>
 
 ## Files to Review
 
@@ -32,15 +28,10 @@ Then, add implementation details (steps, code snippets, and other technical info
 
 ## Documentation
 
-- link
-- link
-- ...
+- [First Steps](https://js.devexpress.com/Documentation/Guide/Common/First_Steps/)
+- [DataGrid](https://js.devexpress.com/Documentation/Guide/UI_Components/DataGrid/Overview/)
+- [ProgressBar](https://js.devexpress.com/Documentation/Guide/UI_Components/ProgressBar/Overview/)
 
-## More Examples
-
-- link
-- link
-- ...
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
