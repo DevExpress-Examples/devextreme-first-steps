@@ -4,11 +4,11 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# First Steps with DevExtreme
+# Getting Started with DevExtreme
 
-This repository stores code for the following DevExtreme step-by-step tutorial: [First Steps](https://js.devexpress.com/Documentation/Guide/Common/First_Steps/). 
+This repository contains code referenced in the following DevExtreme step-by-step tutorial: [First Steps](https://js.devexpress.com/Documentation/Guide/Common/First_Steps/). 
 
-The application includes two DevExtreme components: [DataGrid](https://js.devexpress.com/Documentation/Guide/UI_Components/DataGrid/Overview/) and [ProgressBar](https://js.devexpress.com/Documentation/Guide/UI_Components/ProgressBar/Overview/). The DataGrid displays tasks, and you can mark them as complete or incomplete. The ProgressBar above the DataGrid indicates task completion progress.
+The sample application includes two DevExtreme UI components: [DataGrid](https://js.devexpress.com/Documentation/Guide/UI_Components/DataGrid/Overview/) and [ProgressBar](https://js.devexpress.com/Documentation/Guide/UI_Components/ProgressBar/Overview/). Our DataGrid displays task information (you can mark them as complete or incomplete). The ProgressBar above the DataGrid communicates task progress.
 
 <div align="center"><img src="./first-steps.png" /></div>
 
