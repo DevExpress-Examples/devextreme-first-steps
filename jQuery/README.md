@@ -1,28 +1,28 @@
-# jQuery
+# jQuery DevExtreme Example
 
-## Installation
+For more information about this example check the [Readme](../README.md).
 
-Download the example and use NPM to install required libraries.
+## Build and Lint
 
-```
+Install dependencies:
+```sh
 npm install
 ```
 
-## Code
-
-Take a look at the following files of this example to see the required code: 
-
-Your files go here
-
-## Development server
-
-Run the `npm run start` command to run the development server. Use the following link to check the example:
+Start dev server:
+```sh
+npm start
 ```
-http://localhost:3000/src/index.html
+App URL: http://localhost:5050/src/index.html
+
+Run linter:
+```sh
+npm run lint
 ```
 
 ## Further help
 
-You can learn more about jQuery API in the [jQuery documentation](https://api.jquery.com/).
+jQuery docs: https://api.jquery.com/
+DevExtreme docs: https://js.devexpress.com/jQuery/Documentation
 
-To get more help on DevExtreme submit an issue in the [Support Center](https://www.devexpress.com/Support/Center/Question/Create)
+To get more help with DevExtreme, submit a ticket through the [Support Center](https://supportcenter.devexpress.com/ticket/create).
