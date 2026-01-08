@@ -40,6 +40,10 @@ function updateProgress() {
 }
 </script>
 <style>
+:root {
+    color-scheme: light; /* Update this property when you switch between light/dark themes. */
+}
+
 #dashboard {
   display: grid;
   gap: 20px;
@@ -51,7 +55,7 @@ function updateProgress() {
 
 #progress,
 #task-grid {
-  background: #fff;
+  background-color: light-dark(#fff, #383838);
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0 0 0 / 10%);
