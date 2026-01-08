@@ -26,7 +26,7 @@
 import { ref } from 'vue';
 import DxProgressBar from 'devextreme-vue/progress-bar';
 import DxDataGrid, { DxColumn, DxEditing } from 'devextreme-vue/data-grid';
-import 'devextreme/dist/css/dx.light.css';
+import 'devextreme/dist/css/dx.fluent.blue.light.css';
 
 const tasks = [
   { id: 1, task: 'Buy groceries', dueDate: new Date(), done: false },

@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import DataGrid, { Column, Editing } from 'devextreme-react/data-grid';
 import ProgressBar from 'devextreme-react/progress-bar';
 import './App.css';
-import 'devextreme/dist/css/dx.light.css';
+import 'devextreme/dist/css/dx.fluent.blue.light.css';
 
 const tasks = [
   {
