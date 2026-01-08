@@ -41,7 +41,7 @@ function updateProgress() {
 </script>
 <style>
 :root {
-    color-scheme: light; /* Update this property when you switch between light/dark themes. */
+  color-scheme: light; /* Update this property when you switch between light/dark themes. */
 }
 
 #dashboard {
