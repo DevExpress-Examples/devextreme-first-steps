@@ -69,7 +69,7 @@ function renderDueDateCell(data: DataGridTypes.ColumnCellTemplateData): JSX.Elem
   );
 }
 
-// This processes `undefined` values to eliminate the Indeterminate state in Done column editors (DevExtreme CheckBox).
+// This processes `undefined` values to eliminate the Indeterminate state in CheckBox components.
 function calculateDoneValue(row: taskData): boolean {
   return !!row.done;
 }
