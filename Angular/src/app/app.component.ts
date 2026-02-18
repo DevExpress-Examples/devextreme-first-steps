@@ -4,12 +4,13 @@ import { DxProgressBarModule } from 'devextreme-angular/ui/progress-bar';
 import { DxButtonModule, DxButtonTypes } from 'devextreme-angular/ui/button';
 import { formatDate } from 'devextreme/localization';
 import dxDataGrid from 'devextreme/ui/data_grid';
+import notify from 'devextreme/ui/notify';
 
 interface taskData {
-  id: number,
-  task: string,
-  dueDate: Date,
-  done: boolean,
+  id: number;
+  task: string;
+  dueDate: Date;
+  done: boolean;
 }
 
 @Component({
@@ -41,13 +42,16 @@ export class AppComponent {
 
   // This processes `undefined` values to eliminate the Indeterminate state in Done column editors (DevExtreme CheckBox).
   calculateDoneValue(row: taskData): boolean {
-    return !!row.done; 
+    return !!row.done;
   }
 
   createAddClickHandler(grid: dxDataGrid): (e: DxButtonTypes.ClickEvent) => void {
     return () => {
-      grid.addRow();
-    }
+      grid.addRow().catch((error) => {
+        // addRow() returns a promise. This code satisfies the no-floating-promises lint rule.
+        notify(error);
+      });
+    };
   }
 
   updateProgress(): void {
