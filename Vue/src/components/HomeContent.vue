@@ -1,16 +1,19 @@
 <template>
-  <div id='dashboard'>
-    <DxProgressBar id='progress' :value='progressValue' />
+  <div id="dashboard">
+    <DxProgressBar
+      id="progress"
+      :value="progressValue"
+    />
     <DxDataGrid
-      id='task-grid'
-      key-expr='id'
-      :data-source='tasks'
-      @row-updated='updateProgress'
-      @row-inserted='updateProgress'
-      @row-removed='updateProgress'
+      id="task-grid"
+      key-expr="id"
+      :data-source="tasks"
+      @row-updated="updateProgress"
+      @row-inserted="updateProgress"
+      @row-removed="updateProgress"
     >
       <DxColumn
-        data-field='task'
+        data-field="task"
         cell-template="taskCellTemplate"
       />
       <template #taskCellTemplate="{ data }">
@@ -22,7 +25,7 @@
         </div>
       </template>
       <DxColumn
-        data-field='dueDate'
+        data-field="dueDate"
         cell-template="dueDateCellTemplate"
       />
       <template #dueDateCellTemplate="{ data }">
@@ -34,7 +37,7 @@
         </div>
       </template>
       <DxColumn
-        data-field='done'
+        data-field="done"
         :calculate-cell-value="calculateDoneValue"
       />
       <DxColumn
@@ -45,15 +48,15 @@
         <DxButton
           icon="add"
           styling-mode="text"
-          @click="createAddClickHandler(data.component)($event)"
+          @click="createAddClickHandler(data.component)"
         />
       </template>
       <DxEditing
-        mode='cell'
-        :allow-updating='true'
-        :allow-adding='true'
-        :allow-deleting='true'
-        new-row-position='last'
+        mode="cell"
+        :allow-updating="true"
+        :allow-adding="true"
+        :allow-deleting="true"
+        new-row-position="last"
       />
     </DxDataGrid>
   </div>
@@ -63,18 +66,19 @@ import { ref } from 'vue';
 
 import { DxProgressBar } from 'devextreme-vue/progress-bar';
 import { DxDataGrid, DxColumn, DxEditing } from 'devextreme-vue/data-grid';
-import { DxButton, type DxButtonTypes } from 'devextreme-vue/button';
+import { DxButton } from 'devextreme-vue/button';
 
 import { formatDate } from 'devextreme/localization';
+import notify from 'devextreme/ui/notify';
 
 import 'devextreme/dist/css/dx.fluent.blue.light.css';
 import dxDataGrid from 'devextreme/ui/data_grid';
 
 interface taskData {
-  id: number,
-  task: string,
-  dueDate: Date,
-  done: boolean,
+  id: number;
+  task: string;
+  dueDate: Date;
+  done: boolean;
 }
 
 const tasks: taskData[] = [
@@ -90,13 +94,16 @@ function updateProgress() {
   progressValue.value = Math.round((completed / all) * 100);
 }
 
-function createAddClickHandler(grid: dxDataGrid): (e: DxButtonTypes.ClickEvent) => void {
+function createAddClickHandler(grid: dxDataGrid): () => void {
   return () => {
-    grid.addRow();
-  }
+    grid.addRow().catch((error) => {
+      // addRow() returns a promise. This code satisfies the no-floating-promises lint rule.
+      notify(error);
+    });
+  };
 }
 
-// This processes `undefined` values to eliminate the Indeterminate state in Done column editors (DevExtreme CheckBox).
+// This processes `undefined` values to eliminate the Indeterminate state in CheckBox components.
 function calculateDoneValue(row: taskData): boolean {
   return !!row.done;
 }
