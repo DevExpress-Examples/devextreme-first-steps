@@ -1,7 +1,6 @@
 <div id="dashboard">
   <dx-progress-bar id="progress" [value]="progressValue"></dx-progress-bar>
   <dx-data-grid
-    #taskGrid
     id="task-grid"
     keyExpr="id"
     [dataSource]="tasks"
@@ -43,7 +42,7 @@
       <dx-button
         icon="add"
         stylingMode="text"
-        (onClick)="createAddClickHandler(taskGrid)($event)"
+        (onClick)="createAddClickHandler(data.component)($event)"
       ></dx-button>
     </div>
     <dxo-data-grid-editing

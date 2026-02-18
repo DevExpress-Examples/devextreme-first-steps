@@ -3,6 +3,7 @@ import { DxDataGridComponent, DxDataGridModule } from 'devextreme-angular/ui/dat
 import { DxProgressBarModule } from 'devextreme-angular/ui/progress-bar';
 import { DxButtonModule, DxButtonTypes } from 'devextreme-angular/ui/button';
 import { formatDate } from 'devextreme/localization';
+import dxDataGrid from 'devextreme/ui/data_grid';
 
 interface taskData {
   id: number,
@@ -43,9 +44,9 @@ export class AppComponent {
     return !!row.done; 
   }
 
-  createAddClickHandler(grid: DxDataGridComponent): (e: DxButtonTypes.ClickEvent) => void {
+  createAddClickHandler(grid: dxDataGrid): (e: DxButtonTypes.ClickEvent) => void {
     return () => {
-      grid.instance.addRow();
+      grid.addRow();
     }
   }
 
