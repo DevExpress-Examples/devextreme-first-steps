@@ -1,49 +1,54 @@
 $(() => {
-  $("#progress").dxProgressBar({
+  $('#progress').dxProgressBar({
     min: 0,
     max: 100,
     value: 50,
     showStatus: true,
-    statusFormat: (v) => `Completed: ${v * 100}%`
+    statusFormat: (v) => `Completed: ${v * 100}%`,
   });
 
-  const tasks = [
-    { id: 1, task: "Buy groceries", dueDate: new Date(), done: false },
-    { id: 2, task: "Write a blog post", dueDate: new Date(), done: true }
-  ];
+  const tasks = [{
+    id: 1,
+    task: 'Buy groceries',
+    dueDate: new Date(),
+    done: false,
+  }, {
+    id: 2,
+    task: 'Write a blog post',
+    dueDate: new Date(),
+    done: true,
+  }];
 
-  const grid = $("#task-grid")
+  $('#task-grid')
     .dxDataGrid({
       dataSource: tasks,
-      keyExpr: "id",
+      keyExpr: 'id',
       columns: [{
-        dataField: "task",
+        dataField: 'task',
         cellTemplate(element, data) {
           if (!data.value) {
             return $(element)
               .text('Enter a title...')
               .css('color', 'var(--dx-color-icon)');
-          } else {
-            return $(element).text(data.value);
           }
-        }
+          return $(element).text(data.value);
+        },
       }, {
-        dataField: "dueDate",
+        dataField: 'dueDate',
         cellTemplate(element, data) {
           if (!data.value) {
             return $(element)
               .text('Enter a date...')
               .css('color', 'var(--dx-color-icon)');
-          } else {
-            return $(element).text(DevExpress.localization.formatDate(data.value, 'shortDate'));
           }
-        }
+          return $(element).text(DevExpress.localization.formatDate(data.value, 'shortDate'));
+        },
       }, {
-        dataField: "done",
+        dataField: 'done',
         dataType: 'boolean',
         calculateCellValue(row) {
           return !!row.done;
-        }
+        },
       }, {
         type: 'buttons',
         headerCellTemplate(el, data) {
@@ -52,28 +57,27 @@ $(() => {
             stylingMode: 'text',
             onClick() {
               data.component.addRow();
-            }
-          })
-        }
+            },
+          });
+        },
       }],
       editing: {
-        mode: "cell",
+        mode: 'cell',
         allowUpdating: true,
         allowAdding: true,
         allowDeleting: true,
-        newRowPosition: "last"
+        newRowPosition: 'last',
       },
       onRowUpdated: updateProgress,
       onRowInserted: updateProgress,
-      onRowRemoved: updateProgress
-    })
-    .dxDataGrid("instance");
+      onRowRemoved: updateProgress,
+    });
 
   function updateProgress() {
     const all = tasks.length;
     const completed = tasks.filter((t) => t.done).length;
-    $("#progress")
-      .dxProgressBar("instance")
-      .option("value", Math.round((completed / all) * 100));
+    $('#progress')
+      .dxProgressBar('instance')
+      .option('value', Math.round((completed / all) * 100));
   }
 });
