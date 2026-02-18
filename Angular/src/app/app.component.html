@@ -1,6 +1,7 @@
 <div id="dashboard">
   <dx-progress-bar id="progress" [value]="progressValue"></dx-progress-bar>
   <dx-data-grid
+    #taskGrid
     id="task-grid"
     keyExpr="id"
     [dataSource]="tasks"
@@ -8,9 +9,43 @@
     (onRowInserted)="updateProgress()"
     (onRowRemoved)="updateProgress()"
   >
-    <dxi-data-grid-column dataField="task"></dxi-data-grid-column>
-    <dxi-data-grid-column dataField="dueDate"></dxi-data-grid-column>
-    <dxi-data-grid-column dataField="done"></dxi-data-grid-column>
+    <dxi-data-grid-column
+      dataField="task"
+      cellTemplate="taskCellTemplate"
+    ></dxi-data-grid-column>
+    <div *dxTemplate="let data of 'taskCellTemplate'">
+      @if (!data.value) {
+        <div style="color: var(--dx-color-icon)">Enter a title...</div>
+      } @else {
+        <div>{{ data.value }}</div>
+      }
+    </div>
+    <dxi-data-grid-column
+      dataField="dueDate"
+      cellTemplate="dueDateCellTemplate"
+    ></dxi-data-grid-column>
+    <div *dxTemplate="let data of 'dueDateCellTemplate'">
+      @if (!data.value) {
+        <div style="color: var(--dx-color-icon)">Enter a date...</div>
+      } @else {
+        <div>{{ formatDate(data.value, 'shortDate') }}</div>
+      }
+    </div>
+    <dxi-data-grid-column
+      dataField="done"
+      [calculateCellValue]="calculateDoneValue"
+    ></dxi-data-grid-column>
+    <dxi-data-grid-column
+      type="buttons"
+      headerCellTemplate="buttonColumnHeaderTemplate"
+    ></dxi-data-grid-column>
+    <div *dxTemplate="let data of 'buttonColumnHeaderTemplate'">
+      <dx-button
+        icon="add"
+        stylingMode="text"
+        (onClick)="createAddClickHandler(taskGrid)($event)"
+      ></dx-button>
+    </div>
     <dxo-data-grid-editing
       mode="cell"
       [allowUpdating]="true"
