@@ -14,9 +14,9 @@
     ></dxi-data-grid-column>
     <div *dxTemplate="let data of 'taskCellTemplate'">
       @if (!data.value) {
-        <div style="color: var(--dx-color-icon)">Enter a title...</div>
+      <div style="color: var(--dx-color-icon)">Enter a title...</div>
       } @else {
-        <div>{{ data.value }}</div>
+      <div>{{ data.value }}</div>
       }
     </div>
     <dxi-data-grid-column
@@ -25,9 +25,9 @@
     ></dxi-data-grid-column>
     <div *dxTemplate="let data of 'dueDateCellTemplate'">
       @if (!data.value) {
-        <div style="color: var(--dx-color-icon)">Enter a date...</div>
+      <div style="color: var(--dx-color-icon)">Enter a date...</div>
       } @else {
-        <div>{{ formatDate(data.value, 'shortDate') }}</div>
+      <div>{{ formatDate(data.value, "shortDate") }}</div>
       }
     </div>
     <dxi-data-grid-column
