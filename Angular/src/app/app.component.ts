@@ -40,7 +40,7 @@ export class AppComponent {
 
   progressValue = 50;
 
-  // This processes `undefined` values to eliminate the Indeterminate state in Done column editors (DevExtreme CheckBox).
+  // This processes `undefined` values to eliminate the Indeterminate state in CheckBox components.
   calculateDoneValue(row: taskData): boolean {
     return !!row.done;
   }
