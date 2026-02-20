@@ -58,6 +58,9 @@
         :allow-deleting="true"
         new-row-position="last"
       />
+      <DxToolbar
+        :visible="false"
+      />
     </DxDataGrid>
   </div>
 </template>
@@ -65,7 +68,7 @@
 import { ref } from 'vue';
 
 import { DxProgressBar } from 'devextreme-vue/progress-bar';
-import { DxDataGrid, DxColumn, DxEditing } from 'devextreme-vue/data-grid';
+import { DxDataGrid, DxColumn, DxEditing, DxToolbar } from 'devextreme-vue/data-grid';
 import { DxButton } from 'devextreme-vue/button';
 
 import { formatDate } from 'devextreme/localization';
@@ -139,10 +142,6 @@ function calculateDoneValue(row: taskData): boolean {
 
 #task-grid .dx-datagrid-headers, #task-grid .dx-datagrid .dx-datagrid-table .dx-header-row>td:last-child {
   border-top-right-radius: 8px;
-}
-
-#task-grid .dx-datagrid-header-panel {
-  display: none;
 }
 
 #task-grid .dx-row-lines:nth-last-child(2) > td {
