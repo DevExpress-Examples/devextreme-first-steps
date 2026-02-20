@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DxDataGridComponent, DxDataGridModule } from 'devextreme-angular/ui/data-grid';
+import { DxDataGridModule } from 'devextreme-angular/ui/data-grid';
 import { DxProgressBarModule } from 'devextreme-angular/ui/progress-bar';
-import { DxButtonModule, DxButtonTypes } from 'devextreme-angular/ui/button';
+import { DxButtonModule, type DxButtonTypes } from 'devextreme-angular/ui/button';
 import { formatDate } from 'devextreme/localization';
 import dxDataGrid from 'devextreme/ui/data_grid';
 import notify from 'devextreme/ui/notify';
