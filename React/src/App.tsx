@@ -4,6 +4,7 @@ import {
   DataGrid,
   Column,
   Editing,
+  Toolbar,
   type DataGridTypes,
 } from 'devextreme-react/data-grid';
 import { ProgressBar } from 'devextreme-react/progress-bar';
@@ -126,6 +127,9 @@ function App(): JSX.Element {
           allowAdding={true}
           allowDeleting={true}
           newRowPosition='last'
+        />
+        <Toolbar
+          visible={false}
         />
       </DataGrid>
     </div>
