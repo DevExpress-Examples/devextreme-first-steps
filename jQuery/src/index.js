@@ -68,6 +68,9 @@ $(() => {
         allowDeleting: true,
         newRowPosition: 'last',
       },
+      toolbar: {
+        visible: false,
+      },
       onRowUpdated: updateProgress,
       onRowInserted: updateProgress,
       onRowRemoved: updateProgress,
