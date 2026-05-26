@@ -75,7 +75,7 @@ import { formatDate } from 'devextreme/localization';
 import notify from 'devextreme/ui/notify';
 
 import 'devextreme/dist/css/dx.fluent.blue.light.css';
-import dxDataGrid from 'devextreme/ui/data_grid';
+import type dxDataGrid from 'devextreme/ui/data_grid';
 
 interface taskData {
   id: number;
