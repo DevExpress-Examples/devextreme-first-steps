@@ -17,14 +17,14 @@ import notify from 'devextreme/ui/notify';
 import './App.css';
 import 'devextreme/dist/css/dx.fluent.blue.light.css';
 
-interface taskData {
+interface TaskData {
   id: number;
   task: string;
   dueDate: Date;
   done: boolean;
 }
 
-const tasks: taskData[] = [
+const tasks: TaskData[] = [
   {
     id: 1,
     task: 'Buy groceries',
@@ -71,7 +71,7 @@ function renderDueDateCell(data: DataGridTypes.ColumnCellTemplateData): JSX.Elem
 }
 
 // This processes `undefined` values to eliminate the Indeterminate state in CheckBox components.
-function calculateDoneValue(row: taskData): boolean {
+function calculateDoneValue(row: TaskData): boolean {
   return !!row.done;
 }
 

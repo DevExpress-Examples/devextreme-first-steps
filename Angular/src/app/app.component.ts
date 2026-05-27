@@ -6,7 +6,7 @@ import { formatDate } from 'devextreme/localization';
 import type dxDataGrid from 'devextreme/ui/data_grid';
 import notify from 'devextreme/ui/notify';
 
-interface taskData {
+interface TaskData {
   id: number;
   task: string;
   dueDate: Date;
@@ -23,7 +23,7 @@ interface taskData {
 export class AppComponent {
   formatDate = formatDate;
 
-  tasks: taskData[] = [
+  tasks: TaskData[] = [
     {
       id: 1,
       task: 'Buy groceries',
@@ -41,7 +41,7 @@ export class AppComponent {
   progressValue = 50;
 
   // This processes `undefined` values to eliminate the Indeterminate state in CheckBox components.
-  calculateDoneValue(row: taskData): boolean {
+  calculateDoneValue(row: TaskData): boolean {
     return !!row.done;
   }
 
