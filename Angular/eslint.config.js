@@ -11,6 +11,7 @@ export default [
   { ignores: ['node_modules/**', 'eslint.config.js', 'dist/**', '.angular/**', 'ngcc.config.js', 'stylelint.config.mjs'] },
   ...spellCheck,
   ...angularConfig,
+
   {
     files: ['**/*.ts'],
     languageOptions: {
