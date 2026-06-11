@@ -19,6 +19,7 @@ export default [
   {
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
+      'import/extensions': 'off',
       'react/react-in-jsx-scope': 'off',
       'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/vitest.config.ts', '**/vite.config.ts', '**/*.test.tsx', '**/setupTests.ts'] }],
     },
