@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DxDataGridModule } from 'devextreme-angular/ui/data-grid';
 import { DxProgressBarModule } from 'devextreme-angular/ui/progress-bar';
 import { DxButtonModule, type DxButtonTypes } from 'devextreme-angular/ui/button';
@@ -18,6 +18,7 @@ interface TaskData {
   standalone: true,
   imports: [DxDataGridModule, DxProgressBarModule, DxButtonModule],
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
